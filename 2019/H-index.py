@@ -16,10 +16,9 @@ for i in range(0, t):
         if arr[j] > h:
             heappush(priority_queue, arr[j])
 
-        if len(priority_queue) > 1 and len(priority_queue) > h:
-            elem = heappop(priority_queue)
-            if elem > h:
-                heappush(priority_queue, elem)
+        if len(priority_queue) > 1 and len(priority_queue) > h >= priority_queue[0]:
+            heappop(priority_queue)
+
         h = min(len(priority_queue), priority_queue[0])
         current_result += ' ' + str(h)
 
